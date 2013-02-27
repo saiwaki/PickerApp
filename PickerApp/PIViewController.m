@@ -18,15 +18,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSDictionary *dic = [NSDictionary dictionaryWithObject:@"KHQvcu4yb2bObgdLrI3SSngsUBKUJpmLwu0cCBC1KJg=" forKey:@"authenticity_token"];
+
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:@"aaa" forKey:@"content"];
+
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:dict forKey:@"tweets"];
+    NSLog(@"%@",dic);
     NSData *data = [self encodeDictionary:dic];
-    
+
     
     NSURL *url = [[NSURL alloc]initWithString:@"http://localhost:3000/tweets"];
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc]initWithURL:url];
     [req setHTTPMethod:@"POST"];
     [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
     [req setValue:[NSString stringWithFormat:@"%d",[data length]] forHTTPHeaderField:@"Content-Length"];
+    [req setValue:@"_tsubuyaki_session=563652b882c8f10c5cef4f7ade255220" forHTTPHeaderField:@"Cookie"];
+    [req setValue:@"ZEz1Eiysbu9ENfnVNRubdqu5FM3hBgkJ8sdkGvbudd8=" forHTTPHeaderField:@"X-CSRF-Token"];
     [req setHTTPBody:data];
     [req setHTTPShouldHandleCookies:YES];
     NSURLConnection *con = [[NSURLConnection alloc]initWithRequest:req delegate:self];
