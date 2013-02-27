@@ -24,17 +24,8 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObject:dict forKey:@"tweet"];
     NSLog(@"%@",dic);
 
-//    NSData *data = [self encodeDictionary:dic];
-    NSString *bodyString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes
-                                                            (NULL,
-                                                             (__bridge CFStringRef) url,
-                                                             NULL,
-                                                             CFSTR("!*'();:@&=+$,/?%#[]"),
-                                                             kCFStringEncodingUTF8));
-    NSLog(@"%@",bodyString);
-    
+    NSString *bodyString = [self _buildParameters:dict]; //dictではなくdicにしたい
     NSData   *data   = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-
     
     NSURL *url = [[NSURL alloc]initWithString:@"http://localhost:3000/tweets"];
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc]initWithURL:url];
@@ -50,6 +41,30 @@
         
     }
     
+}
+
+- (NSString*)_buildParameters:(NSDictionary *)params {
+    NSMutableString *s = [NSMutableString string];
+    
+    NSString *key;
+    for ( key in params ) {
+        NSString *uriEncodedValue = [self _uriEncodeForString:[params objectForKey:key]];
+        [s appendFormat:@"%@=%@&", key, uriEncodedValue];
+    }
+    
+    if ( [s length] > 0 ) {
+        [s deleteCharactersInRange:NSMakeRange([s length]-1, 1)];
+    }
+    return s;
+}
+
+- (NSString*)_uriEncodeForString:(NSString *)str {
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes
+                                          (NULL,
+                                           (__bridge CFStringRef) str,
+                                           NULL,
+                                           CFSTR("!*'();:@&=+$,/?%#[]"),
+                                           kCFStringEncodingUTF8));
 }
 
 
