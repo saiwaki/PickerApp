@@ -21,9 +21,19 @@
 
     NSDictionary *dict = [NSDictionary dictionaryWithObject:@"aaa" forKey:@"content"];
 
-    NSDictionary *dic = [NSDictionary dictionaryWithObject:dict forKey:@"tweets"];
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:dict forKey:@"tweet"];
     NSLog(@"%@",dic);
-    NSData *data = [self encodeDictionary:dic];
+
+//    NSData *data = [self encodeDictionary:dic];
+    NSString *bodyString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes
+                                                            (NULL,
+                                                             (__bridge CFStringRef) url,
+                                                             NULL,
+                                                             CFSTR("!*'();:@&=+$,/?%#[]"),
+                                                             kCFStringEncodingUTF8));
+    NSLog(@"%@",bodyString);
+    
+    NSData   *data   = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
 
     
     NSURL *url = [[NSURL alloc]initWithString:@"http://localhost:3000/tweets"];
@@ -40,18 +50,6 @@
         
     }
     
-}
-
-- (NSData*)encodeDictionary:(NSDictionary*)dictionary {
-    NSMutableArray *parts = [[NSMutableArray alloc] init];
-    for (NSString *key in dictionary) {
-        NSString *encodedValue = [[dictionary objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *part = [NSString stringWithFormat: @"%@=%@", encodedKey, encodedValue];
-        [parts addObject:part];
-    }
-    NSString *encodedDictionary = [parts componentsJoinedByString:@"&"];
-    return [encodedDictionary dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 
