@@ -18,6 +18,12 @@
 		2FB3ABC316DC709100ED9183 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3ABC216DC709100ED9183 /* Default-568h@2x.png */; };
 		2FB3ABC616DC709100ED9183 /* PIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3ABC516DC709100ED9183 /* PIViewController.m */; };
 		2FB3ABC916DC709100ED9183 /* PIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3ABC716DC709100ED9183 /* PIViewController.xib */; };
+		2FC5D94D16EDA91500EBDBA8 /* ListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5D94B16EDA91500EBDBA8 /* ListingViewController.m */; };
+		2FC5D94E16EDA91500EBDBA8 /* ListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5D94C16EDA91500EBDBA8 /* ListingViewController.xib */; };
+		2FC5D95316EDADD700EBDBA8 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5D95116EDADD700EBDBA8 /* ModalViewController.m */; };
+		2FC5D95416EDADD700EBDBA8 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5D95216EDADD700EBDBA8 /* ModalViewController.xib */; };
+		2FC5D95816EDAE4E00EBDBA8 /* NavPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5D95616EDAE4E00EBDBA8 /* NavPushViewController.m */; };
+		2FC5D95916EDAE4E00EBDBA8 /* NavPushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5D95716EDAE4E00EBDBA8 /* NavPushViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,15 @@
 		2FB3ABC416DC709100ED9183 /* PIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIViewController.h; sourceTree = "<group>"; };
 		2FB3ABC516DC709100ED9183 /* PIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIViewController.m; sourceTree = "<group>"; };
 		2FB3ABC816DC709100ED9183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PIViewController.xib; sourceTree = "<group>"; };
+		2FC5D94A16EDA91500EBDBA8 /* ListingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListingViewController.h; sourceTree = "<group>"; };
+		2FC5D94B16EDA91500EBDBA8 /* ListingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingViewController.m; sourceTree = "<group>"; };
+		2FC5D94C16EDA91500EBDBA8 /* ListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingViewController.xib; sourceTree = "<group>"; };
+		2FC5D95016EDADD700EBDBA8 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		2FC5D95116EDADD700EBDBA8 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		2FC5D95216EDADD700EBDBA8 /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
+		2FC5D95516EDAE4E00EBDBA8 /* NavPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavPushViewController.h; sourceTree = "<group>"; };
+		2FC5D95616EDAE4E00EBDBA8 /* NavPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavPushViewController.m; sourceTree = "<group>"; };
+		2FC5D95716EDAE4E00EBDBA8 /* NavPushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavPushViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,15 @@
 				2FB3ABC416DC709100ED9183 /* PIViewController.h */,
 				2FB3ABC516DC709100ED9183 /* PIViewController.m */,
 				2FB3ABC716DC709100ED9183 /* PIViewController.xib */,
+				2FC5D94A16EDA91500EBDBA8 /* ListingViewController.h */,
+				2FC5D94B16EDA91500EBDBA8 /* ListingViewController.m */,
+				2FC5D94C16EDA91500EBDBA8 /* ListingViewController.xib */,
+				2FC5D95016EDADD700EBDBA8 /* ModalViewController.h */,
+				2FC5D95116EDADD700EBDBA8 /* ModalViewController.m */,
+				2FC5D95216EDADD700EBDBA8 /* ModalViewController.xib */,
+				2FC5D95516EDAE4E00EBDBA8 /* NavPushViewController.h */,
+				2FC5D95616EDAE4E00EBDBA8 /* NavPushViewController.m */,
+				2FC5D95716EDAE4E00EBDBA8 /* NavPushViewController.xib */,
 				2FB3ABB316DC709000ED9183 /* Supporting Files */,
 			);
 			path = PickerApp;
@@ -164,6 +188,9 @@
 				2FB3ABC116DC709100ED9183 /* Default@2x.png in Resources */,
 				2FB3ABC316DC709100ED9183 /* Default-568h@2x.png in Resources */,
 				2FB3ABC916DC709100ED9183 /* PIViewController.xib in Resources */,
+				2FC5D94E16EDA91500EBDBA8 /* ListingViewController.xib in Resources */,
+				2FC5D95416EDADD700EBDBA8 /* ModalViewController.xib in Resources */,
+				2FC5D95916EDAE4E00EBDBA8 /* NavPushViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +204,9 @@
 				2FB3ABB916DC709000ED9183 /* main.m in Sources */,
 				2FB3ABBD16DC709100ED9183 /* PIAppDelegate.m in Sources */,
 				2FB3ABC616DC709100ED9183 /* PIViewController.m in Sources */,
+				2FC5D94D16EDA91500EBDBA8 /* ListingViewController.m in Sources */,
+				2FC5D95316EDADD700EBDBA8 /* ModalViewController.m in Sources */,
+				2FC5D95816EDAE4E00EBDBA8 /* NavPushViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

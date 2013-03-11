@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PIViewController : UIViewController 
+- (IBAction)openModalButton:(id)sender;
 
 @end

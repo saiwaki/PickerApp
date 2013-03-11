@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class PIViewController;
+#import "PIViewController.h"
+#import "ListingViewController.h"
 
 @interface PIAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) PIViewController *viewController;
+@property (strong, nonatomic) UINavigationController *navPi;
+@property (strong, nonatomic) UINavigationController *navLi;
+@property (strong, nonatomic) UITabBarController *tabCont;
 
 @end

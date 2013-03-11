@@ -8,16 +8,26 @@
 
 #import "PIAppDelegate.h"
 
-#import "PIViewController.h"
-
-@implementation PIAppDelegate
+@implementation PIAppDelegate {
+    
+    // privateなインスタンス変数はここに書く
+    // publicなインスタンス変数はここではなく、@propertyで書く。
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[PIViewController alloc] initWithNibName:@"PIViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+
+    UIViewController *piController = [[PIViewController alloc] initWithNibName:@"PIViewController" bundle:nil];
+    self.navPi = [[UINavigationController alloc] initWithRootViewController:piController];
+    
+    UIViewController *liController = [[ListingViewController alloc] initWithNibName:@"ListingViewController" bundle:nil];
+    self.navLi = [[UINavigationController alloc] initWithRootViewController:liController];
+    
+    self.tabCont = [[UITabBarController alloc] init];
+    self.tabCont.viewControllers = @[self.navPi,self.navLi];
+    
+    self.window.rootViewController = self.tabCont;
     [self.window makeKeyAndVisible];
     return YES;
 }
