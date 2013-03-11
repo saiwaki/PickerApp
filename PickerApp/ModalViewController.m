@@ -26,6 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self getWebValue];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) getWebValue{
     
     //    NSString *post =[[NSString alloc] initWithFormat:@"tweet[content]=yaha"];
     //    NSData *data = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -75,10 +85,10 @@
                                           kCFStringEncodingUTF8));
 }
 
-- (void)didReceiveMemoryWarning
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //通信後受け取ったdataを処理してviewに表示する
 }
 
 - (IBAction)closeButton:(id)sender {

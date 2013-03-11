@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ModalViewController : UIViewController
+@interface ModalViewController : UIViewController <NSURLConnectionDelegate>
+
 - (IBAction)closeButton:(id)sender;
 
 @end
